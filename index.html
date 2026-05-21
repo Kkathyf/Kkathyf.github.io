@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ganlin (Kathy) Feng</title>
+  <meta name="description" content="Personal webpage of Ganlin (Kathy) Feng, PhD student in Computer Science at Western University." />
+
+  <style>
+    :root {
+      --accent: #33B38D;
+      --accent-dark: #238a6d;
+      --text: #222831;
+      --muted: #667085;
+      --light: #f7fbfa;
+      --card: #ffffff;
+      --border: #e6ecea;
+      --shadow: 0 18px 45px rgba(31, 76, 64, 0.08);
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(51, 179, 141, 0.14), transparent 32rem),
+        linear-gradient(180deg, #ffffff 0%, #f8fbfa 100%);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration: none;
+      transition: color 0.18s ease, border-color 0.18s ease;
+    }
+
+    a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.82);
+      border-bottom: 1px solid rgba(230, 236, 234, 0.9);
+    }
+
+    .nav-inner {
+      width: min(var(--max-width), calc(100% - 2rem));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.9rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: #3f4f4a;
+    }
+
+    .page {
+      width: min(var(--max-width), calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 3.5rem 0 4rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      padding: 2.2rem;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-img {
+      width: 210px;
+      height: 210px;
+      border-radius: 28px;
+      object-fit: cover;
+      display: block;
+      border: 5px solid #ffffff;
+      box-shadow: 0 18px 35px rgba(28, 76, 62, 0.16);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.28rem 0.72rem;
+      border-radius: 999px;
+      background: rgba(51, 179, 141, 0.12);
+      color: var(--accent-dark);
+      font-size: 0.88rem;
+      font-weight: 650;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(2.15rem, 5vw, 4rem);
+      line-height: 1.05;
+      margin: 0 0 0.8rem;
+      letter-spacing: -0.055em;
+    }
+
+    .subtitle {
+      font-size: 1.14rem;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 0 1.25rem;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.42rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.45rem 0.85rem;
+      background: #fff;
+      color: #34443f;
+      font-size: 0.94rem;
+      box-shadow: 0 8px 20px rgba(31, 76, 64, 0.04);
+    }
+
+    .icon {
+      width: 1.05em;
+      height: 1.05em;
+      flex: 0 0 auto;
+      fill: currentColor;
+    }
+
+    .icon.linkedin {
+      color: #0a66c2;
+    }
+
+    .pill.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+      font-weight: 650;
+    }
+
+    .pill.primary:hover {
+      color: white;
+      background: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    .section {
+      margin-top: 3.25rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      margin: 0;
+      letter-spacing: -0.025em;
+    }
+
+    .section-note {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 1.35rem;
+      box-shadow: 0 10px 28px rgba(31, 76, 64, 0.045);
+    }
+
+    .about-text {
+      font-size: 1.03rem;
+      margin: 0;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      background: var(--light);
+      color: #35544b;
+      border: 1px solid #dcebe6;
+      padding: 0.34rem 0.72rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 550;
+    }
+
+    .item-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.2rem 1.3rem;
+      box-shadow: 0 8px 24px rgba(31, 76, 64, 0.04);
+    }
+
+    .item-title {
+      font-weight: 750;
+      margin: 0 0 0.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .item-meta {
+      color: var(--accent-dark);
+      font-weight: 650;
+      font-size: 0.94rem;
+      margin: 0 0 0.4rem;
+    }
+
+    .item-desc {
+      color: #4f5f5a;
+      margin: 0;
+    }
+
+    .publication {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.9rem;
+    }
+
+    .pub-badge {
+      width: 4.2rem;
+      height: 2rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(51, 179, 141, 0.12);
+      color: var(--accent-dark);
+      font-weight: 750;
+      font-size: 0.78rem;
+      margin-top: 0.1rem;
+      white-space: nowrap;
+    }
+
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.7rem;
+    }
+
+    .small-link {
+      font-size: 0.88rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.25rem 0.62rem;
+      color: #34443f;
+      background: #fff;
+    }
+
+    .small-link:hover {
+      text-decoration: none;
+      border-color: var(--accent);
+      color: var(--accent-dark);
+    }
+
+    .small-link.disabled {
+      color: #98a2a0;
+      background: #f4f7f6;
+      border-color: #e1e7e5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 9rem 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .time {
+      color: var(--accent-dark);
+      font-weight: 750;
+    }
+
+    .footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.92rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .contact-row {
+        justify-content: center;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="#top">Ganlin (Kathy) Feng</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#publications">Selected Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#awards">Honors & Awards</a>
+        <a href="#teaching">Teaching</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page" id="top">
+    <header class="hero">
+      <div class="profile-wrap">
+        <img
+          src="Ganlin_Headshot.jpg"
+          alt="Ganlin Feng Picture"
+          class="profile-img"
+        />
+      </div>
+
+      <div>
+        <h1>Ganlin (Kathy) Feng</h1>
+        <p class="subtitle">
+         PhD student in Computer Science at Western University
+        </p>
+        <div class="contact-row" aria-label="Contact links">
+          <a class="pill primary" href="mailto:gfeng23@uwo.ca">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+            Email
+          </a>
+          <a class="pill" href="https://github.com/Kkathyf" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A12 12 0 0 0 8.21 23.9c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.07 1.84 2.82 1.31 3.51 1 .11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.47 5.93.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
+            GitHub
+          </a>
+          <a class="pill" href="https://www.linkedin.com/in/ganlin-feng-78538729a/" target="_blank" rel="noopener">
+            <svg class="icon linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.66H9.35V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0Z"/></svg>
+            LinkedIn
+          </a>
+          <a class="pill" href="https://scholar.google.com/citations?user=TLVlsbIAAAAJ" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 8l11 5 9-4.09V15h2V8L12 3Zm-6 8.18V15c0 2.21 2.69 4 6 4s6-1.79 6-4v-3.82l-6 2.73-6-2.73Z"/></svg>
+            Google Scholar
+          </a>
+          <a class="pill" href="https://maps.app.goo.gl/QTndmfdUDc4kM2MS7" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>
+            London, ON, Canada
+          </a>
+        </div>
+
+      </div>
+    </header>
+
+    <section class="section" id="about">
+      <div class="section-header">
+        <h2>About</h2>
+      </div>
+      <div class="card">
+        <p class="about-text">
+          I am a PhD student in Computer Science at Western University, supervised by <a href="https://phulab.org/" target="_blank" rel="noopener">Dr. Pingzhao Hu</a>. My research lies at the intersection of machine learning, computer vision, and biomedical applications, with a focus on data-efficient and interpretable AI systems for rare disease diagnosis, medical imaging, and multimodal clinical decision support. Before joining Western University, I received my Bachelor of Computer Science degree at 2024 from the University of Waterloo.
+        </p>
+        <div class="tag-list">
+          <span class="tag">AI4Health</span>
+          <span class="tag">Computer Vision</span>
+          <span class="tag">Multimodal Large Language Models</span>
+          <span class="tag">Agentic AI</span>
+          <span class="tag">Medical Imaging</span>
+          <span class="tag">Synthetic Data</span>
+          <span class="tag">Human-Centered AI</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <div class="section-header">
+        <h2>Selected Publications</h2>
+      </div>
+      <div class="item-list">
+        <article class="item publication">
+          <span class="pub-badge">CVPR</span>
+          <div>
+            <p class="item-title">RDFace: A Benchmark Dataset for Rare Disease Facial Image Analysis under Extreme Data Scarcity and Phenotype-Aware Synthetic Generation</p>
+            <p class="item-meta">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026 · Highlight</p>
+            <p class="item-desc">
+              <u>G. Feng</u>, Y. Long, H. M. Ali, E. L. Lou, F. R. Butt, Q. Liu, Y. Wang, and P. Hu. <br />
+              A benchmark dataset and evaluation framework for rare disease facial image analysis under extreme data scarcity,
+              with phenotype-aware synthetic generation and reproducible evaluation.
+            </p>
+            <div class="pub-links">
+              <a class="small-link" href="https://kkathyf.github.io/RDFace/" target="_blank" rel="noopener">Project / Code</a>
+              <a class="small-link" href="https://arxiv.org/abs/2604.03454" target="_blank" rel="noopener">Paper</a>
+              <a class="small-link" href="https://cvpr.thecvf.com/virtual/2026/poster/38967" target="_blank" rel="noopener">CVPR Poster</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="item publication">
+          <span class="pub-badge">CVPR</span>
+          <div>
+            <p class="item-title">RADx: Hand X-Ray Rheumatoid Arthritis Severity Assessment Tool</p>
+            <p class="item-meta">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026 · Demo Track</p>
+            <p class="item-desc">
+              <u>G. Feng</u>, Y. Long, A. Liu, L. J. O’Neil, C. A. Hitchon, and P. Hu. <br />
+              An AI-driven web system for rheumatoid arthritis severity assessment from hand X-rays, integrating joint detection,
+              damage scoring, report generation and an interactive clinical interface.
+            </p>
+            <div class="pub-links">
+              <span class="small-link disabled" aria-disabled="true">Project / Code (coming soon)</span>
+              <a class="small-link" href="https://biodatweb.schulich.uwo.ca/HuLab/radx/" target="_blank" rel="noopener">Demo</a>
+              <a class="small-link" href="https://www.youtube.com/watch?v=dp_2sww6wIg" target="_blank" rel="noopener">Video</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="item publication">
+          <span class="pub-badge">CVPR</span>
+          <div>
+            <p class="item-title">Synthetic Data Alone is Enough? Rethinking Data Scarcity in Pediatric Rare Disease Recognition</p>
+            <p class="item-meta">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026 · Workshop</p>
+            <p class="item-desc">
+              <u>G. Feng</u>, Y. Long, E. L. Lou, P. Hu, and W. Xu. <br />
+              A study for the synthetic-only regime of pediatric rare disease recognition using facial images under extreme data scarcity.
+            </p>
+            <div class="pub-links">
+              <a class="small-link" href="CV4CHL_CVPR_Poster_2_1.pdf" target="_blank" rel="noopener">CVPR Poster</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-header">
+        <h2>Research Experience</h2>
+      </div>
+      <div class="item-list">
+        <div class="item">
+          <p class="item-title"><a href="https://tcairem.utoronto.ca/news/meet-t-cairems-2026-trainee-rounds-presenters" target="_blank" rel="noopener">T-CAIREM Trainee Rounds Competition</a></p>
+          <p class="item-meta">2026 · Toronto, Canada</p>
+          <p class="item-desc">
+            Conducted research in medical AI and healthcare data analysis, prepared a 30-minute research presentation,
+            and engaged with interdisciplinary researchers through adjudicated evaluation by an expert panel.
+          </p>
+        </div>
+        <div class="item">
+          <p class="item-title"><a href="https://ssc.ca/en/meetings/annual/2026-ssc-annual-meeting-hamilton/2026-case-studies-data-analysis-competition" target="_blank" rel="noopener">Parkinson’s Case Study Competition</a></p>
+          <p class="item-meta">2026 · Hamilton, Canada</p>
+          <p class="item-desc">
+            Developed machine learning models to classify Parkinson’s disease versus atypical parkinsonism using real-world
+            clinical data from the Canadian Open Parkinson Network, and explored agentic AI for clinician-facing report generation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="awards">
+      <div class="section-header">
+          <h2>Honors & Awards</h2>
+      </div>
+      <div class="item-list">
+        <div class="item">
+          <p class="item-title">IEEE/CVF CVPR 2026 Broadening Participation Scholarships </p>
+          <p class="item-meta">2026 · IEEE/CVF Conference on Computer Vision and Pattern Recognition</p>
+          <p class="item-desc">
+          </p>
+        </div>
+      <div class="item-list">
+        <div class="item">
+          <p class="item-title">IEEE/CVF CVPR 2026 Travel Stipend Award</p>
+          <p class="item-meta">2026 · IEEE/CVF Conference on Computer Vision and Pattern Recognition</p>
+          <p class="item-desc">
+          </p>
+        </div>
+        <div class="item">
+          <p class="item-title">Western Graduate Research Scholarship</p>
+          <p class="item-meta">2024 – Present · Western University</p>
+        </div>
+        <div class="item">
+          <p class="item-title">Dean's Honors</p>
+          <p class="item-meta">2024 · University of Waterloo</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="teaching">
+      <div class="section-header">
+        <h2>Teaching & Work Experience</h2>
+      </div>
+      <div class="item-list">
+        <div class="item">
+          <p class="item-title">Graduate Research Assistant</p>
+          <p class="item-meta">2024 – Present · Western University</p>
+          <p class="item-desc">
+            Conduct research in medical AI, computer vision, large language models, and agentic AI for healthcare applications.
+          </p>
+        </div>
+        <div class="item">
+          <p class="item-title">Graduate Teaching Assistant</p>
+          <p class="item-meta">2024 – Present · Western University</p>
+          <p class="item-desc">
+            Assist course teaching, student support, assignment grading, and course logistics for undergraduate computer science courses.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> Ganlin (Kathy) Feng</span>
+      <span>Last updated: May 2026</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
