@@ -284,6 +284,37 @@
       margin: 0;
     }
 
+    .item-award {
+      margin: 0.75rem 0 0.9rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid #e6eeeb;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .award-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: #eaf6f1;
+      color: #21866b;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .award-team {
+      color: #50615c;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .item-divider {
+      margin: 0.75rem 0 0.9rem;
+      border-top: 1px solid #e6eeeb;
+    }
+
     .publication {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -509,7 +540,7 @@
               damage scoring, report generation and an interactive clinical interface.
             </p>
             <div class="pub-links">
-              <span class="small-link disabled" aria-disabled="true">Project / Code (coming soon)</span>
+              <!-- <span class="small-link disabled" aria-disabled="true">Project / Code (coming soon)</span> -->
               <a class="small-link" href="https://biodatweb.schulich.uwo.ca/HuLab/radx/" target="_blank" rel="noopener">Demo</a>
               <a class="small-link" href="https://www.youtube.com/watch?v=dp_2sww6wIg" target="_blank" rel="noopener">Video</a>
             </div>
@@ -522,7 +553,7 @@
             <p class="item-title">Synthetic Data Alone is Enough? Rethinking Data Scarcity in Pediatric Rare Disease Recognition</p>
             <p class="item-meta">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026 · Workshop</p>
             <p class="item-desc">
-              <u>G. Feng</u>, Y. Long, E. L. Lou, L. Chen, Z. Jing, P. Hu, and W. Xu. <br />
+              <u>G. Feng</u>, Y. Long, E. L. Lou, P. Hu, and W. Xu. <br />
               A study for the synthetic-only regime of pediatric rare disease recognition using facial images under extreme data scarcity.
             </p>
             <div class="pub-links">
@@ -543,6 +574,7 @@
         <div class="item">
           <p class="item-title"><a href="https://tcairem.utoronto.ca/news/meet-t-cairems-2026-trainee-rounds-presenters" target="_blank" rel="noopener">T-CAIREM Trainee Rounds Competition</a></p>
           <p class="item-meta">2026 · Toronto, Canada</p>
+          <div class="item-divider"></div>
           <p class="item-desc">
             Conducted research in medical AI and healthcare data analysis, prepared a 30-minute research presentation,
             and engaged with interdisciplinary researchers through adjudicated evaluation by an expert panel.
@@ -551,13 +583,15 @@
         <div class="item">
           <p class="item-title"><a href="https://ssc.ca/en/meetings/annual/2026-ssc-annual-meeting-hamilton/2026-case-studies-data-analysis-competition" target="_blank" rel="noopener">Parkinson’s Case Study Competition</a></p>
           <p class="item-meta">2026 · Hamilton, Canada</p>
+          <div class="item-award">
+            <span class="award-badge">First Place</span>
+            <span class="award-team">Team: Zhongyuan Zhang, Yuqing Liu, <u>Ganlin Feng</u>, and Yuxi Long</span>
+          </div>
           <p class="item-desc">
-            Developed machine learning models to classify Parkinson’s disease versus atypical parkinsonism using real-world
+            Developed machine learning models to classify Parkinson's disease versus atypical parkinsonism using real-world
             clinical data from the Canadian Open Parkinson Network, and explored agentic AI for clinician-facing report generation.
           </p>
         </div>
-      </div>
-    </section>
 
     <section class="section" id="awards">
       <div class="section-header">
@@ -612,7 +646,7 @@
 
     <footer class="footer">
       <span>© <span id="year"></span> Ganlin (Kathy) Feng</span>
-      <span>Last updated: May 2026</span>
+      <span>Last updated: June 2026</span>
     </footer>
   </main>
 
